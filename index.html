@@ -11,7 +11,6 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
       gtag('config', 'G-ZVVTTF9W0K');
     </script>
 
@@ -19,8 +18,8 @@
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #8B0000, #B22222);
-            color: #fff;
+            background: #fff;
+            color: #333;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -40,32 +39,30 @@
         header img {
             width: 50px;
             height: 50px;
-            border-radius: 10px;
             margin-right: 10px;
-            border: 2px solid #fff;
         }
 
         header span {
             font-weight: bold;
             font-size: 0.9rem;
+            color: #B22222;
         }
 
         h1 {
             margin-top: 80px;
             font-size: 1.8rem;
-            animation: fadeIn 1s ease-out;
+            color: #B22222;
         }
 
         p {
             font-size: 1rem;
             margin: 15px 0;
-            animation: fadeIn 2s ease-in-out;
         }
 
         .countdown {
             font-size: 2rem;
             margin: 10px 0;
-            animation: pulse 1s infinite;
+            color: #B22222;
         }
 
         .buttons {
@@ -77,8 +74,8 @@
         }
 
         a {
-            background: #fff;
-            color: #8B0000;
+            background: #B22222;
+            color: #fff;
             padding: 12px 25px;
             border-radius: 30px;
             text-decoration: none;
@@ -87,7 +84,7 @@
         }
 
         a:hover {
-            background: #ffdddd;
+            background: #8B0000;
             transform: scale(1.05);
         }
 
@@ -95,18 +92,12 @@
             position: absolute;
             bottom: 15px;
             font-size: 0.8rem;
-            color: #eee;
+            color: #777;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+        footer a {
+            color: #B22222;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -126,7 +117,7 @@
     </div>
 
     <footer>
-        © 2025 歩くアルパカ制作委員会｜<a href="privacy-policy.html" style="color:#fff; text-decoration:underline;">プライバシーポリシー</a>
+        © 2025 歩くアルパカ制作委員会｜<a href="privacy-policy.html">プライバシーポリシー</a>
     </footer>
 
     <script>
