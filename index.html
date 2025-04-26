@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>立命館大学 生活支援アプリ「歩くアルパカ」インストール</title>
-    <meta name="description" content="立命館大学アプリ開発サークル制作。新入生募集中！">
+    <title>立命館大学公式サークル「歩くアルパカ」アプリインストール</title>
+    <meta name="description" content="立命館大学登録団体『歩くアルパカ制作委員会』が提供する生活支援アプリ。安心・安全にご利用いただけます。">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVVTTF9W0K"></script>
@@ -18,26 +18,47 @@
     <style>
         body {
             margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #8B0000, #B22222);
+            color: #fff;
+            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background: linear-gradient(135deg, #2a2a72, #009ffd);
-            font-family: 'Arial', sans-serif;
-            color: #fff;
-            overflow: hidden;
-            text-align: center;
+        }
+
+        header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            margin-right: 10px;
+            border: 2px solid #fff;
+        }
+
+        header span {
+            font-weight: bold;
+            font-size: 0.9rem;
         }
 
         h1 {
-            font-size: 2rem;
-            animation: slideIn 1s ease-out;
+            margin-top: 80px;
+            font-size: 1.8rem;
+            animation: fadeIn 1s ease-out;
         }
 
         p {
-            font-size: 1.2rem;
-            margin: 20px 0;
+            font-size: 1rem;
+            margin: 15px 0;
             animation: fadeIn 2s ease-in-out;
         }
 
@@ -48,35 +69,37 @@
         }
 
         .buttons {
-            margin-top: 30px;
+            margin-top: 20px;
             display: flex;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
             justify-content: center;
         }
 
         a {
-            background: #ffdd57;
-            color: #2a2a72;
-            padding: 15px 30px;
-            border-radius: 50px;
+            background: #fff;
+            color: #8B0000;
+            padding: 12px 25px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
             transition: transform 0.3s, background 0.3s;
         }
 
         a:hover {
-            background: #ffab40;
-            transform: scale(1.1);
+            background: #ffdddd;
+            transform: scale(1.05);
+        }
+
+        footer {
+            position: absolute;
+            bottom: 15px;
+            font-size: 0.8rem;
+            color: #eee;
         }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateY(-50px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -88,14 +111,23 @@
     </style>
 </head>
 <body>
-    <h1>あなたの端末に合わせて移動します</h1>
-    <p>数秒後に自動でストアに移動します...</p>
+    <header>
+        <img src="logo.png" alt="歩くアルパカ ロゴ">
+        <span>立命館大学 登録団体<br>歩くアルパカ制作委員会</span>
+    </header>
+
+    <h1>公式アプリ インストールページ</h1>
+    <p>あなたの端末に合わせてストアに移動します</p>
     <div class="countdown" id="countdown">3</div>
 
     <div class="buttons">
         <a href="https://apps.apple.com/us/app/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E3%82%A2%E3%83%97%E3%83%AAfor%E7%AB%8B%E5%91%BD%E9%A4%A8-%E6%AD%A9%E3%81%8F%E3%82%A2%E3%83%AB%E3%83%91%E3%82%AB-r/id6499567971">iOS版はこちら</a>
         <a href="https://arukuarupaka.github.io/qr_to_app_arupaka/install-arupaka-android-edition.html">Android版はこちら</a>
     </div>
+
+    <footer>
+        © 2025 歩くアルパカ制作委員会｜<a href="privacy-policy.html" style="color:#fff; text-decoration:underline;">プライバシーポリシー</a>
+    </footer>
 
     <script>
         const userAgent = navigator.userAgent.toLowerCase();
@@ -105,8 +137,6 @@
             targetUrl = "https://apps.apple.com/us/app/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E3%82%A2%E3%83%97%E3%83%AAfor%E7%AB%8B%E5%91%BD%E9%A4%A8-%E6%AD%A9%E3%81%8F%E3%82%A2%E3%83%AB%E3%83%91%E3%82%AB-r/id6499567971";
         } else if (userAgent.includes("android")) {
             targetUrl = "https://arukuarupaka.github.io/qr_to_app_arupaka/install-arupaka-android-edition.html";
-        } else {
-            targetUrl = "";  // PCなどの場合は自動遷移しない
         }
 
         let countdown = 3;
