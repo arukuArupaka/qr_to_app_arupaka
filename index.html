@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="1.5; url=https://apps.apple.com/us/app/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E3%82%A2%E3%83%97%E3%83%AAfor%E7%AB%8B%E5%91%BD%E9%A4%A8-%E6%AD%A9%E3%81%8F%E3%82%A2%E3%83%AB%E3%83%91%E3%82%AB-r/id6499567971">
-    <title>立命館大学の生活支援 歩くアルパカをインストール</title>
-    <meta name="description" content="立命館大学のアプリ開発サークルにより開発されました。新入生募集中です">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVVTTF9W0K"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <title>立命館大学 生活支援アプリ「歩くアルパカ」インストール</title>
+    <meta name="description" content="立命館大学アプリ開発サークル制作。新入生募集中！">
 
-  gtag('config', 'G-ZVVTTF9W0K');
-</script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVVTTF9W0K"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZVVTTF9W0K');
+    </script>
+
     <style>
         body {
             margin: 0;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
@@ -26,42 +27,103 @@
             font-family: 'Arial', sans-serif;
             color: #fff;
             overflow: hidden;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            animation: slideIn 1s ease-out;
         }
 
         p {
-            text-align: center;
+            font-size: 1.2rem;
+            margin: 20px 0;
             animation: fadeIn 2s ease-in-out;
-            font-size: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .countdown {
+            font-size: 2rem;
+            margin: 10px 0;
+            animation: pulse 1s infinite;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         a {
-            color: #ffdd57;
+            background: #ffdd57;
+            color: #2a2a72;
+            padding: 15px 30px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s;
+            transition: transform 0.3s, background 0.3s;
         }
 
         a:hover {
-            color: #ffab40;
+            background: #ffab40;
+            transform: scale(1.1);
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
     </style>
 </head>
 <body>
-    <p>アプリストアに移動中です。<br>自動的に移動されない場合は、<a href="https://apps.apple.com/us/app/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E3%82%A2%E3%83%97%E3%83%AAfor%E7%AB%8B%E5%91%BD%E9%A4%A8-%E6%AD%A9%E3%81%8F%E3%82%A2%E3%83%AB%E3%83%91%E3%82%AB-r/id6499567971">こちらをクリックしてください。</a></p>
+    <h1>あなたの端末に合わせて移動します</h1>
+    <p>数秒後に自動でストアに移動します...</p>
+    <div class="countdown" id="countdown">3</div>
+
+    <div class="buttons">
+        <a href="https://apps.apple.com/us/app/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E3%82%A2%E3%83%97%E3%83%AAfor%E7%AB%8B%E5%91%BD%E9%A4%A8-%E6%AD%A9%E3%81%8F%E3%82%A2%E3%83%AB%E3%83%91%E3%82%AB-r/id6499567971">iOS版はこちら</a>
+        <a href="/install-arupaka-android-edition.html">Android版はこちら</a>
+    </div>
+
+    <script>
+        const userAgent = navigator.userAgent.toLowerCase();
+        let targetUrl = "";
+
+        if (userAgent.includes("iphone") || userAgent.includes("ipad")) {
+            targetUrl = "https://apps.apple.com/us/app/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E3%82%A2%E3%83%97%E3%83%AAfor%E7%AB%8B%E5%91%BD%E9%A4%A8-%E6%AD%A9%E3%81%8F%E3%82%A2%E3%83%AB%E3%83%91%E3%82%AB-r/id6499567971";
+        } else if (userAgent.includes("android")) {
+            targetUrl = "/install-arupaka-android-edition.html";
+        } else {
+            targetUrl = "";  // PCなどの場合は自動遷移しない
+        }
+
+        let countdown = 3;
+        const countdownElement = document.getElementById('countdown');
+
+        if (targetUrl) {
+            const timer = setInterval(() => {
+                countdown--;
+                countdownElement.textContent = countdown;
+                if (countdown <= 0) {
+                    clearInterval(timer);
+                    window.location.href = targetUrl;
+                }
+            }, 1000);
+        } else {
+            countdownElement.textContent = "▶ 手動で選択してください";
+        }
+    </script>
 </body>
 </html>
